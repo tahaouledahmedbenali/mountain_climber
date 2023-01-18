@@ -48,6 +48,7 @@ texture_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Humvee"]
 position = Vector2( -182, -68 )
 current = true
+smoothing_enabled = true
 offset_h = 1.0
 offset_v = -0.56
 drag_margin_left = 0.61

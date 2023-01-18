@@ -15,7 +15,6 @@ node_b = NodePath("JeepWheel")
 softness = 1.5
 
 [node name="JeepWheel" parent="WheelHolder" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
 
 [node name="WheelHolder2" type="PinJoint2D" parent="."]
 position = Vector2( 48, 46 )
