@@ -1,18 +1,20 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://res/levels/terrain.gd" type="Script" id=2]
-[ext_resource path="res://res/world/road/black_road.png" type="Texture" id=3]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/09_Forest.png" type="Texture" id=4]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/06_Forest.png" type="Texture" id=5]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/03_Particles.png" type="Texture" id=6]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/07_Forest.png" type="Texture" id=7]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/08_Forest.png" type="Texture" id=8]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/10_Sky.png" type="Texture" id=9]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/02_Bushes.png" type="Texture" id=10]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/05_Particles.png" type="Texture" id=11]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/01_Mist.png" type="Texture" id=12]
-[ext_resource path="res://res/world/background/Parallax Forest Background - Blue/04_Forest.png" type="Texture" id=13]
-[ext_resource path="res://res/player/Jeep.tscn" type="PackedScene" id=15]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/12_Desert.png" type="Texture" id=1]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/10_Cloudsmall.png" type="Texture" id=2]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/11_Mountains.png" type="Texture" id=3]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/08_Cloud.png" type="Texture" id=4]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/05_Cloud.png" type="Texture" id=5]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/04_Cloud.png" type="Texture" id=6]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/03_Moon.png" type="Texture" id=7]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/07_Cloud.png" type="Texture" id=8]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/01_Sky.png" type="Texture" id=9]
+[ext_resource path="res://res/player/Humvee.tscn" type="PackedScene" id=10]
+[ext_resource path="res://res/levels/terrain.gd" type="Script" id=11]
+[ext_resource path="res://res/world/road/black_road.png" type="Texture" id=12]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/09_Cloudsmall.png" type="Texture" id=13]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/02_Stars.png" type="Texture" id=14]
+[ext_resource path="res://res/world/background/Parallax Desert Background (Seamless)/06_Cloud.png" type="Texture" id=15]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 100.0
@@ -20,11 +22,11 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -876, 419, 0, 0, 0, 0, 29, 493, 0, 0, 0, 0, 943, 556, 0, 0, 0, 0, 1053, 554, 0, 0, 0, 0, 1228, 558, 0, 0, 0, 0, 1546, 541, 0, 0, 0, 0, 1909, 548, 0, 0, 0, 0, 2166, 538, 0, 0, 0, 0, 2349, 504, 0, 0, 0, 0, 2744, 522, 0, 0, 0, 0, 2993, 512, 0, 0, 0, 0, 3092, 517, 0, 0, 0, 0, 3427, 502, 0, 0, 0, 0, 3743, 490, 0, 0, 0, 0, 4855, 461, 0, 0, 0, 0, 5338, 508, -193.663, 133.342, 193.663, -133.342, 5892, 442, 0, 0, 0, 0, 6468, 405, 0, 0, 0, 0, 6831, 349, -264.901, -67.3477, 264.901, 67.3477, 7452, 327, 0, 0, 0, 0, 8223, 382, 0, 0, 0, 0, 8750, 364, 0, 0, 0, 0, 10573, 468, 0, 0, 0, 0, 11635, 447, 0, 0, 0, 0, 12575, 511, 0, 0, 0, 0, 13474, 492, 0, 0, 0, 0, 14833, 5047, 0, 0, 0, 0, -1407, 5047 )
 }
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="terrain" type="StaticBody2D" parent="."]
 position = Vector2( 0, 64 )
-script = ExtResource( 2 )
+script = ExtResource( 11 )
 
 [node name="Path2D" type="Path2D" parent="terrain"]
 position = Vector2( -15, 0 )
@@ -38,15 +40,14 @@ color = Color( 0.0666667, 0.0980392, 0.172549, 1 )
 [node name="Line2D" type="Line2D" parent="terrain"]
 width = 256.0
 default_color = Color( 0.32549, 0.411765, 0.588235, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 12 )
 texture_mode = 1
 
-[node name="Jeep" parent="." instance=ExtResource( 15 )]
+[node name="Humvee" parent="." instance=ExtResource( 10 )]
 
-[node name="Camera2D" type="Camera2D" parent="Jeep"]
+[node name="Camera2D" type="Camera2D" parent="Humvee"]
 position = Vector2( -182, -68 )
 current = true
-smoothing_enabled = true
 offset_h = 1.0
 offset_v = -0.56
 drag_margin_left = 0.61
@@ -57,6 +58,7 @@ editor_draw_drag_margin = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 0, -540 )
 transform = Transform2D( 1, 0, 0, 1, 0, -540 )
+scroll_base_scale = Vector2( 0.1, 0.1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1, 0 )
@@ -72,7 +74,7 @@ motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( -3, 0 )
-texture = ExtResource( 4 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -81,7 +83,7 @@ motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( -7, 3 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -89,7 +91,7 @@ motion_scale = Vector2( 0.7, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -105,7 +107,7 @@ motion_scale = Vector2( 0.5, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -113,7 +115,7 @@ motion_scale = Vector2( 0.4, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource( 13 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -121,7 +123,7 @@ motion_scale = Vector2( 0.3, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -130,7 +132,7 @@ motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2( -21, 0 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -139,34 +141,23 @@ motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer10"]
 position = Vector2( 0, 5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 2 )
 centered = false
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 1
-offset = Vector2( 0, -540 )
-transform = Transform2D( 1, 0, 0, 1, 0, -540 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
-motion_scale = Vector2( 1, 0 )
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
-texture = ExtResource( 10 )
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer11"]
+position = Vector2( 0, 5 )
+texture = ExtResource( 3 )
 centered = false
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
-motion_scale = Vector2( 1, 0 )
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2"]
-texture = ExtResource( 12 )
-centered = false
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
-motion_scale = Vector2( 1, 0 )
-motion_mirroring = Vector2( 1920, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer3"]
-texture = ExtResource( 6 )
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer12"]
+position = Vector2( 0, 5 )
+texture = ExtResource( 1 )
 centered = false

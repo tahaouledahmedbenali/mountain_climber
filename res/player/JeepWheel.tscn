@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 9.0
 
-[node name="Wheel" type="RigidBody2D" groups=["player", "wheel"]]
+[node name="JeepWheel" type="RigidBody2D" groups=["player", "wheel"]]
 gravity_scale = 30.0
 
 [node name="Sprite" type="Sprite" parent="."]
